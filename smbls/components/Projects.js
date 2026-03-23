@@ -151,12 +151,29 @@ export const ProjectCard = {
     position: 'relative',
     width: '100%',
     background: 'bgElevated',
+    ':hover > div': {
+      opacity: '1'
+    },
 
     Img: {
       extends: 'Img',
       width: '100%',
       height: 'auto',
       display: 'block'
+    },
+
+    Overlay: {
+      extends: 'Box',
+      position: 'absolute',
+      top: '0',
+      left: '0',
+      right: '0',
+      bottom: '0',
+      background: 'rgba(0,0,0,0.28)',
+      opacity: '0',
+      transition: 'opacity 0.25s ease',
+      zIndex: '1',
+      pointerEvents: 'none'
     },
 
     PrevBtn: {
@@ -170,6 +187,11 @@ export const ProjectCard = {
       background: 'rgba(0,0,0,0.35)',
       cursor: 'pointer',
       zIndex: '3',
+      opacity: '0',
+      transition: 'opacity 0.25s ease',
+      text: '❮',
+      fontSize: 'B',
+      color: 'rgba(255,255,255,1)',
       onClick: (e, el) => {
         e.stopPropagation()
         const carousel = el.parent.node
@@ -182,8 +204,7 @@ export const ProjectCard = {
           d.style.background = i === prev ? '#00d4ff' : 'rgba(255,255,255,0.35)'
           d.style.transform = i === prev ? 'scale(1.3)' : 'scale(1)'
         })
-      },
-      Icon: { extends: 'P', text: '❮', fontSize: 'B', color: 'white' }
+      }
     },
 
     NextBtn: {
@@ -197,6 +218,11 @@ export const ProjectCard = {
       background: 'rgba(0,0,0,0.35)',
       cursor: 'pointer',
       zIndex: '3',
+      opacity: '0',
+      transition: 'opacity 0.25s ease',
+      text: '❯',
+      fontSize: 'B',
+      color: 'rgba(255,255,255,1)',
       onClick: (e, el) => {
         e.stopPropagation()
         const carousel = el.parent.node
@@ -209,11 +235,11 @@ export const ProjectCard = {
           d.style.background = i === next ? '#00d4ff' : 'rgba(255,255,255,0.35)'
           d.style.transform = i === next ? 'scale(1.3)' : 'scale(1)'
         })
-      },
-      Icon: { extends: 'P', text: '❯', fontSize: 'B', color: 'white' }
+      }
     },
 
     Dots: {
+      opacity: '1',
       extends: 'Flex',
       flexDirection: 'row',
       flexAlign: 'center center',

@@ -54,64 +54,6 @@ export const Contact = {
       }
     },
 
-    // Main CTA email button
-    EmailCTA: {
-      extends: 'Flex',
-      tag: 'a',
-      flexAlign: 'center center',
-      gap: 'Z',
-      padding: 'A C',
-      background: 'accentGlow',
-      borderWidth: '1px',
-      borderStyle: 'solid',
-      borderColor: 'borderAccent',
-      borderRadius: 'Z',
-      textDecoration: 'none',
-      cursor: 'pointer',
-      attr: {
-        href: 'mailto:cchejui@gmail.com',
-        'aria-label': 'Send email to cchejui@gmail.com'
-      },
-      onMouseEnter: (e, el) => {
-        el.node.style.background = 'rgba(0,212,255,0.2)'
-        el.node.style.borderColor = 'rgba(0,212,255,0.5)'
-      },
-      onMouseLeave: (e, el) => {
-        el.node.style.background = 'rgba(0,212,255,0.12)'
-        el.node.style.borderColor = 'rgba(0,212,255,0.25)'
-      },
-
-      EmailIcon: {
-        extends: 'P',
-        text: '✉',
-        fontSize: 'B',
-        color: 'accent'
-      },
-
-      EmailText: {
-        extends: 'Flex',
-        flexDirection: 'column',
-        gap: 'Y',
-
-        EmailLabel: {
-          extends: 'P',
-          text: 'Say hello',
-          fontSize: 'Z',
-          color: 'textMuted',
-          letterSpacing: '0.08em',
-          textTransform: 'uppercase'
-        },
-
-        EmailAddr: {
-          extends: 'P',
-          text: 'cchejui@gmail.com',
-          fontSize: 'A',
-          fontWeight: '600',
-          color: 'accent'
-        }
-      }
-    },
-
     // Social links row
     Socials: {
       extends: 'Flex',
