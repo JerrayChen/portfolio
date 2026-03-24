@@ -1,23 +1,20 @@
 export const Experience = {
-  extends: 'Flex',
+  flow: 'y',
   tag: 'section',
   id: 'section-experience',
-  flexDirection: 'column',
-  flexAlign: 'center center',
+  align: 'center center',
   padding: 'D B',
   background: 'bgBase',
   attr: { 'aria-label': 'Experience section' },
 
   Inner: {
-    extends: 'Flex',
-    flexDirection: 'column',
+    flow: 'y',
     gap: 'C',
     maxWidth: '1100px',
     width: '100%',
 
     Header: {
-      extends: 'Flex',
-      flexDirection: 'column',
+      flow: 'y',
       gap: 'Z',
 
       Label: {
@@ -41,13 +38,11 @@ export const Experience = {
     },
 
     Timeline: {
-      extends: 'Flex',
-      flexDirection: 'column',
+      flow: 'y',
       gap: 'B',
       position: 'relative',
 
       Line: {
-        extends: 'Box',
         position: 'absolute',
         left: 'Z1',
         top: '0',
@@ -162,21 +157,19 @@ export const Experience = {
 }
 
 export const JobCard = {
-  extends: 'Flex',
-  flexAlign: 'flex-start flex-start',
+  flow: 'x',
+  align: 'flex-start flex-start',
   gap: 'A'
 }
 
 export const JobDot = {
-  extends: 'Flex',
-  flexAlign: 'flex-start center',
-  flexDirection: 'column',
+  flow: 'y',
+  align: 'flex-start center',
   flexShrink: '0',
   width: 'A',
-  paddingTop: '18px',
+  paddingTop: 'A1',
 
   DotCircle: {
-    extends: 'Box',
     width: 'Z1',
     height: 'Z1',
     borderRadius: '50%',
@@ -187,8 +180,7 @@ export const JobDot = {
 }
 
 export const JobCardInner = {
-  extends: 'Flex',
-  flexDirection: 'column',
+  flow: 'y',
   gap: 'A',
   flex: '1',
   padding: 'B',
@@ -200,15 +192,13 @@ export const JobCardInner = {
 }
 
 export const BulletList = {
-  extends: 'Flex',
-  flexDirection: 'column',
+  flow: 'y',
   gap: 'Z'
 }
 
 export const BulletItem = {
-  extends: 'Flex',
-  flexDirection: 'row',
-  flexAlign: 'flex-start flex-start',
+  flow: 'x',
+  align: 'flex-start flex-start',
   gap: 'Z',
 
   BulletDot: {
@@ -230,7 +220,7 @@ export const BulletItem = {
 }
 
 export const TagList = {
-  extends: 'Flex',
+  flow: 'x',
   gap: 'Y',
   flexWrap: 'wrap'
 }

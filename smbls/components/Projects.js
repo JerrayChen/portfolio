@@ -1,25 +1,24 @@
+// NOTE: BASE is a module-level constant — flagged for Rule 33 (vars outside scope lost after serialization).
+// Should be moved into designSystem or el.scope if serialization is required.
 const BASE = 'https://raw.githubusercontent.com/JerrayChen/JerrayChen.github.io/source/public/ProjectsPics'
 
 export const Projects = {
-  extends: 'Flex',
+  flow: 'y',
   tag: 'section',
   id: 'section-projects',
-  flexDirection: 'column',
-  flexAlign: 'center center',
+  align: 'center center',
   padding: 'D B',
   background: 'bgBase',
   attr: { 'aria-label': 'Projects section' },
 
   Inner: {
-    extends: 'Flex',
-    flexDirection: 'column',
+    flow: 'y',
     gap: 'C',
     maxWidth: '1100px',
     width: '100%',
 
     Header: {
-      extends: 'Flex',
-      flexDirection: 'column',
+      flow: 'y',
       gap: 'Z',
 
       Label: {
@@ -50,8 +49,7 @@ export const Projects = {
     },
 
     Cards: {
-      extends: 'Flex',
-      flexDirection: 'column',
+      flow: 'y',
       gap: 'B',
 
       Jiabon: {
@@ -60,7 +58,7 @@ export const Projects = {
           attr: {
             'data-imgs': [BASE+'/Jiabon1.png', BASE+'/Jiabon2.png', BASE+'/Jiabon3.png', BASE+'/Jiabon4.png'].join(',')
           },
-          Img: { attr: { src: BASE+'/Jiabon1.png', alt: 'Jiabon app screenshot' } }
+          Img: { src: BASE+'/Jiabon1.png', alt: 'Jiabon app screenshot' }
         },
         Content: {
           Meta: { Type: { text: 'Personal Project' }, Num: { text: '01' } },
@@ -80,7 +78,12 @@ export const Projects = {
             T6: { extends: 'TechTag', text: 'Stripe' }
           },
           Links: {
-            GithubLink: { attr: { href: 'https://github.com/JerrayChen/jiabon', 'aria-label': 'Jiabon GitHub', target: '_blank', rel: 'noopener noreferrer' } }
+            GithubLink: {
+              href: 'https://github.com/JerrayChen/jiabon',
+              target: '_blank',
+              rel: 'noopener noreferrer',
+              attr: { 'aria-label': 'Jiabon GitHub' }
+            }
           }
         }
       },
@@ -91,7 +94,7 @@ export const Projects = {
           attr: {
             'data-imgs': [BASE+'/MT1.png', BASE+'/MT2.png', BASE+'/MT3.png', BASE+'/MT4.png'].join(',')
           },
-          Img: { attr: { src: BASE+'/MT1.png', alt: 'Meal Thyme app screenshot' } }
+          Img: { src: BASE+'/MT1.png', alt: 'Meal Thyme app screenshot' }
         },
         Content: {
           Meta: { Type: { text: 'Group Project' }, Num: { text: '02' } },
@@ -105,7 +108,12 @@ export const Projects = {
             T5: { extends: 'TechTag', text: 'FullCalendarJS' }
           },
           Links: {
-            GithubLink: { attr: { href: 'https://github.com/JerrayChen/meal-thyme', 'aria-label': 'Meal Thyme GitHub', target: '_blank', rel: 'noopener noreferrer' } }
+            GithubLink: {
+              href: 'https://github.com/JerrayChen/meal-thyme',
+              target: '_blank',
+              rel: 'noopener noreferrer',
+              attr: { 'aria-label': 'Meal Thyme GitHub' }
+            }
           }
         }
       },
@@ -116,7 +124,7 @@ export const Projects = {
           attr: {
             'data-imgs': [BASE+'/TRM1.png', BASE+'/TRM2.png', BASE+'/TRM3.png', BASE+'/TRM4.png'].join(',')
           },
-          Img: { attr: { src: BASE+'/TRM1.png', alt: 'Team Rocket Market screenshot' } }
+          Img: { src: BASE+'/TRM1.png', alt: 'Team Rocket Market screenshot' }
         },
         Content: {
           Meta: { Type: { text: 'Personal Project' }, Num: { text: '03' } },
@@ -128,7 +136,12 @@ export const Projects = {
             T3: { extends: 'TechTag', text: 'Express' }
           },
           Links: {
-            GithubLink: { attr: { href: 'https://github.com/JerrayChen/team-rocket-market', 'aria-label': 'Team Rocket Market GitHub', target: '_blank', rel: 'noopener noreferrer' } }
+            GithubLink: {
+              href: 'https://github.com/JerrayChen/team-rocket-market',
+              target: '_blank',
+              rel: 'noopener noreferrer',
+              attr: { 'aria-label': 'Team Rocket Market GitHub' }
+            }
           }
         }
       }
@@ -137,8 +150,7 @@ export const Projects = {
 }
 
 export const ProjectCard = {
-  extends: 'Flex',
-  flexDirection: 'column',
+  flow: 'y',
   background: 'bgSurface',
   borderRadius: 'A',
   borderWidth: '1px',
@@ -146,8 +158,8 @@ export const ProjectCard = {
   borderColor: 'borderSubtle',
   overflow: 'hidden',
   width: '100%',
+
   Carousel: {
-    extends: 'Box',
     position: 'relative',
     width: '100%',
     background: 'bgElevated',
@@ -163,7 +175,6 @@ export const ProjectCard = {
     },
 
     Overlay: {
-      extends: 'Box',
       position: 'absolute',
       top: '0',
       left: '0',
@@ -177,8 +188,8 @@ export const ProjectCard = {
     },
 
     PrevBtn: {
-      extends: 'Flex',
-      flexAlign: 'center center',
+      flow: 'x',
+      align: 'center center',
       position: 'absolute',
       left: '0',
       top: '0',
@@ -192,6 +203,7 @@ export const ProjectCard = {
       text: '❮',
       fontSize: 'B',
       color: 'rgba(255,255,255,1)',
+      // NOTE: carousel DOM manipulation flagged for Rule 30 refactor
       onClick: (e, el) => {
         e.stopPropagation()
         const carousel = el.parent.node
@@ -208,8 +220,8 @@ export const ProjectCard = {
     },
 
     NextBtn: {
-      extends: 'Flex',
-      flexAlign: 'center center',
+      flow: 'x',
+      align: 'center center',
       position: 'absolute',
       right: '0',
       top: '0',
@@ -223,6 +235,7 @@ export const ProjectCard = {
       text: '❯',
       fontSize: 'B',
       color: 'rgba(255,255,255,1)',
+      // NOTE: carousel DOM manipulation flagged for Rule 30 refactor
       onClick: (e, el) => {
         e.stopPropagation()
         const carousel = el.parent.node
@@ -239,16 +252,15 @@ export const ProjectCard = {
     },
 
     Dots: {
-      opacity: '1',
-      extends: 'Flex',
-      flexDirection: 'row',
-      flexAlign: 'center center',
+      flow: 'x',
+      align: 'center center',
       position: 'absolute',
       bottom: 'Z',
       left: '0',
       right: '0',
       gap: 'Y',
       zIndex: '3',
+      opacity: '1',
 
       D1: { extends: 'CarouselDot', attr: { 'data-dot': '0' }, background: 'accent', transform: 'scale(1.3)' },
       D2: { extends: 'CarouselDot', attr: { 'data-dot': '1' } },
@@ -258,15 +270,14 @@ export const ProjectCard = {
   },
 
   Content: {
-    extends: 'Flex',
-    flexDirection: 'column',
+    flow: 'y',
     gap: 'A',
     padding: 'B',
+    minWidth: '0',
 
     Meta: {
-      extends: 'Flex',
-      flexDirection: 'row',
-      flexAlign: 'flex-start center',
+      flow: 'x',
+      align: 'flex-start center',
       gap: 'Z',
 
       Type: {
@@ -296,9 +307,8 @@ export const ProjectCard = {
     },
 
     Award: {
-      extends: 'Flex',
-      flexDirection: 'row',
-      flexAlign: 'flex-start center',
+      flow: 'x',
+      align: 'flex-start center',
       gap: 'Y',
       display: 'none',
 
@@ -324,24 +334,21 @@ export const ProjectCard = {
     },
 
     Tags: {
-      extends: 'Flex',
-      flexDirection: 'row',
+      flow: 'x',
       gap: 'Y',
       flexWrap: 'wrap',
       width: '100%'
     },
 
     Links: {
-      extends: 'Flex',
-      flexDirection: 'row',
+      flow: 'x',
       gap: 'A',
       marginTop: 'Y',
 
       GithubLink: {
-        extends: 'Flex',
-        tag: 'a',
-        flexDirection: 'row',
-        flexAlign: 'flex-start center',
+        extends: 'Link',
+        flow: 'x',
+        align: 'flex-start center',
         gap: 'Y',
         fontSize: 'Z1',
         fontWeight: '600',
@@ -353,6 +360,7 @@ export const ProjectCard = {
         borderStyle: 'solid',
         borderColor: 'borderSubtle',
         cursor: 'pointer',
+        ':hover': { color: 'accent', borderColor: 'borderAccent' },
         IconLabel: { extends: 'P', text: '⌥' },
         Label: { extends: 'P', text: 'GitHub' }
       }
@@ -361,11 +369,10 @@ export const ProjectCard = {
 }
 
 export const CarouselDot = {
-  extends: 'Box',
   width: '7px',
   height: '7px',
   borderRadius: '50%',
-  background: 'rgba(255,255,255,0.35)',
+  background: 'whiteSubtle',
   cursor: 'pointer',
   transition: 'all 0.2s ease'
 }

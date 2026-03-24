@@ -1,25 +1,22 @@
 export const Contact = {
-  extends: 'Flex',
+  flow: 'y',
   tag: 'section',
   id: 'section-contact',
-  flexDirection: 'column',
-  flexAlign: 'center center',
+  align: 'center center',
   padding: 'D B',
   background: 'bgSurface',
   attr: { 'aria-label': 'Contact section' },
 
   Inner: {
-    extends: 'Flex',
-    flexDirection: 'column',
-    flexAlign: 'center center',
+    flow: 'y',
+    align: 'center center',
     gap: 'C',
     maxWidth: '1100px',
     width: '100%',
 
     Header: {
-      extends: 'Flex',
-      flexDirection: 'column',
-      flexAlign: 'center center',
+      flow: 'y',
+      align: 'center center',
       gap: 'Z',
 
       Label: {
@@ -54,57 +51,49 @@ export const Contact = {
       }
     },
 
-    // Social links row
     Socials: {
-      extends: 'Flex',
-      flexAlign: 'center center',
+      flow: 'x',
+      align: 'center center',
       gap: 'A',
 
       GitHub: {
         extends: 'SocialLink',
         SocialLabel: { text: 'GitHub' },
         SocialHandle: { text: 'JerrayChen' },
-        attr: {
-          href: 'https://github.com/JerrayChen',
-          'aria-label': 'View Jerry Chen GitHub profile',
-          target: '_blank',
-          rel: 'noopener noreferrer'
-        }
+        href: 'https://github.com/JerrayChen',
+        target: '_blank',
+        rel: 'noopener noreferrer',
+        attr: { 'aria-label': 'View Jerry Chen GitHub profile' }
       },
 
       LinkedIn: {
         extends: 'SocialLink',
         SocialLabel: { text: 'LinkedIn' },
         SocialHandle: { text: 'che-jui-chen' },
-        attr: {
-          href: 'https://www.linkedin.com/in/che-jui-chen/',
-          'aria-label': 'View Jerry Chen LinkedIn profile',
-          target: '_blank',
-          rel: 'noopener noreferrer'
-        }
+        href: 'https://www.linkedin.com/in/che-jui-chen/',
+        target: '_blank',
+        rel: 'noopener noreferrer',
+        attr: { 'aria-label': 'View Jerry Chen LinkedIn profile' }
       },
 
       Email: {
         extends: 'SocialLink',
         SocialLabel: { text: 'Email' },
         SocialHandle: { text: 'cchejui@gmail.com' },
-        attr: {
-          href: 'mailto:cchejui@gmail.com',
-          'aria-label': 'Email Jerry Chen'
-        }
+        href: 'mailto:cchejui@gmail.com',
+        attr: { 'aria-label': 'Email Jerry Chen' }
       }
     },
 
     Divider: {
-      extends: 'Box',
       width: '100%',
       height: '1px',
       background: 'borderSubtle'
     },
 
     Footer: {
-      extends: 'Flex',
-      flexAlign: 'center center',
+      flow: 'x',
+      align: 'center center',
       width: '100%',
 
       FooterLeft: {
@@ -118,10 +107,9 @@ export const Contact = {
 }
 
 export const SocialLink = {
-  extends: 'Flex',
-  tag: 'a',
-  flexDirection: 'column',
-  flexAlign: 'center center',
+  extends: 'Link',
+  flow: 'y',
+  align: 'center center',
   gap: 'Y',
   padding: 'A B',
   background: 'bgElevated',
@@ -132,13 +120,9 @@ export const SocialLink = {
   textDecoration: 'none',
   cursor: 'pointer',
   minWidth: '140px',
-  onMouseEnter: (e, el) => {
-    el.node.style.borderColor = 'rgba(0,212,255,0.3)'
-    el.node.style.background = 'rgba(0,212,255,0.05)'
-  },
-  onMouseLeave: (e, el) => {
-    el.node.style.borderColor = 'rgba(255,255,255,0.07)'
-    el.node.style.background = '#1a2234'
+  ':hover': {
+    borderColor: 'borderAccent',
+    background: 'accentGlow'
   },
 
   SocialLabel: {

@@ -1,3 +1,4 @@
+export * from './NavLink.js'
 export * from './Navbar.js'
 export * from './Hero.js'
 export * from './About.js'
