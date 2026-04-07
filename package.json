@@ -1,0 +1,16 @@
+{
+  "name": "jerry-chen-portfolio",
+  "version": "1.0.0",
+  "description": "Jerry Chen — Software Engineer Portfolio",
+  "scripts": {
+    "start": "npx smbls start",
+    "build": "npx smbls build"
+  },
+  "dependencies": {
+    "@supabase/supabase-js": "^2.100.0",
+    "smbls": "^3.4.11"
+  },
+  "devDependencies": {
+    "buffer": "^6.0.3"
+  }
+}

@@ -1,0 +1,6 @@
+{
+  "key": "portfolio",
+  "bundler": "parcel",
+  "dir": "./symbols",
+  "owner": "jerry"
+}
