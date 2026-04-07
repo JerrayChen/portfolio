@@ -1,4 +1,5 @@
 import { create } from 'smbls'
 import * as app from './smbls/index.js'
 
-create({}, app)
+const basePath = window.location.pathname.startsWith('/portfolio') ? '/portfolio' : ''
+create({ basePath }, app)
