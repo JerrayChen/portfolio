@@ -225,15 +225,4 @@ export const TagList = {
   flexWrap: 'wrap'
 }
 
-export const TechTag = {
-  extends: 'P',
-  fontSize: 'Z',
-  fontWeight: '500',
-  color: 'accent',
-  background: 'accentGlow',
-  padding: 'Y Z',
-  borderRadius: 'Y',
-  borderWidth: '1px',
-  borderStyle: 'solid',
-  borderColor: 'borderAccent'
-}
+// TechTag is defined in Projects.js — canonical definition lives there

@@ -18,7 +18,11 @@ export const Navbar = {
   Brand: {
     flow: 'y',
     gap: 'Y',
+    tag: 'button',
     cursor: 'pointer',
+    background: 'transparent',
+    borderWidth: '0',
+    padding: '0',
     attr: { 'aria-label': 'Jerry Chen — back to top' },
     onClick: (e, el) => el.call('scrollTo', 'section-hero'),
     onKeyDown: (e, el) => {
@@ -26,7 +30,7 @@ export const Navbar = {
     },
 
     Name: {
-      extends: 'H1',
+      extends: 'P',
       text: 'Jerry Chen',
       fontSize: 'B',
       fontWeight: '700',

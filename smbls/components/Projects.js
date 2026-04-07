@@ -190,12 +190,14 @@ export const ProjectCard = {
     PrevBtn: {
       flow: 'x',
       align: 'center center',
+      tag: 'button',
       position: 'absolute',
       left: '0',
       top: '0',
       bottom: '0',
       width: '56px',
       background: 'rgba(0,0,0,0.35)',
+      borderWidth: '0',
       cursor: 'pointer',
       zIndex: '3',
       opacity: '0',
@@ -203,6 +205,7 @@ export const ProjectCard = {
       text: '❮',
       fontSize: 'B',
       color: 'rgba(255,255,255,1)',
+      attr: { 'aria-label': 'Previous image' },
       // NOTE: carousel DOM manipulation flagged for Rule 30 refactor
       onClick: (e, el) => {
         e.stopPropagation()
@@ -222,12 +225,14 @@ export const ProjectCard = {
     NextBtn: {
       flow: 'x',
       align: 'center center',
+      tag: 'button',
       position: 'absolute',
       right: '0',
       top: '0',
       bottom: '0',
       width: '56px',
       background: 'rgba(0,0,0,0.35)',
+      borderWidth: '0',
       cursor: 'pointer',
       zIndex: '3',
       opacity: '0',
@@ -235,6 +240,7 @@ export const ProjectCard = {
       text: '❯',
       fontSize: 'B',
       color: 'rgba(255,255,255,1)',
+      attr: { 'aria-label': 'Next image' },
       // NOTE: carousel DOM manipulation flagged for Rule 30 refactor
       onClick: (e, el) => {
         e.stopPropagation()
