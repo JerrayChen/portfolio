@@ -18,6 +18,8 @@ jobs:
           node-version: 22
       - run: npm install
       - run: npx smbls build
+      - name: Fix asset paths for GitHub Pages subdirectory
+        run: sed -i 's|="\/|="./|g; s|":"\\/|":"./|g; s|":"/|":"./|g' dist/index.html
       - uses: actions/upload-pages-artifact@v3
         with:
           path: dist
