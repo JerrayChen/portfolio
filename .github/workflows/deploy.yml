@@ -23,7 +23,7 @@ jobs:
           node -e "
           const fs = require('fs');
           let html = fs.readFileSync('dist/index.html', 'utf8');
-          html = html.replace(/src=\"\//g, 'src=\"./');
+          html = html.replace(/src=\//g, 'src=./');
           html = html.replace(/:\"\/([^\"]+)\"/g, ':\"./\$1\"');
           fs.writeFileSync('dist/index.html', html);
           console.log('Result:', html.trim());
