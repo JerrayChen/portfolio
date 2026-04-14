@@ -1,6 +1,8 @@
 {
-  "key": "portfolio",
+  "key": "jerry-portfolio",
   "bundler": "parcel",
   "dir": "./symbols",
-  "owner": "jerry"
+  "owner": "jerry",
+  "version": "1.0.1",
+  "versionId": "69de82f9c71bffb0366136db"
 }
