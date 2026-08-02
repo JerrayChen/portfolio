@@ -1,173 +1,25 @@
-# CLAUDE.md — Symbols / DOMQL v3 Strict Rules
+# Portfolio — Jerry Chen
 
-> Source: https://github.com/symbo-ls/skills/blob/main/CLAUDE.md
-> NOTE: Where this doc conflicts with live MCP rules (`symbols-mcp get_project_rules`), the MCP rules win.
-> Known conflict: this doc uses `flexAlign`, but current v3 uses `align` for flex shorthand.
+Single-page developer portfolio built with Symbols / DOMQL v3. Sections, in order: Hero, About,
+Skills, Experience, Projects, Contact — one component file each in `smbls/components/`, plus
+`Navbar.js` / `NavLink.js`.
 
-This comprehensive guide documents the declarative component system for Symbols/DOMQL v3, enforcing strict syntax patterns and architectural principles.
+Deployed to GitHub Pages **and** the Symbols platform.
 
-## Core Architecture
+## Framework rules
 
-**Components are plain JavaScript objects, never functions.** The framework uses a "no-import" model where components register once and reuse through declarative trees. Props flatten directly into component objects without wrapper objects.
+Don't look them up here. `symbols-mcp get_project_rules` is the live source of truth, and the
+`smbls-*` skills cover atoms, migration, and accessibility. This file previously inlined a copy
+of those rules; it drifted and started contradicting the framework, so it's gone.
 
-### v3 Syntax Requirements
+Workspace-level `PATTERNS.md` and `design-tokens.md` hold the browser-verified findings that
+aren't in the official rules — read those for the quirks.
 
-| Pattern | v3 (Correct) | v2 (Forbidden) |
-|---------|--------------|----------------|
-| Inheritance | `extends: 'Component'` | `extend: 'Component'` |
-| Child extends | `childExtends: 'Component'` | `childExtend: 'Component'` |
-| Props structure | Root level | `props: { }` wrapper |
-| Event handlers | `onClick: fn` | `on: { click: fn }` |
+## Conventions in this repo
 
-## Project Structure
-
-```
-smbls/
-├── index.js                 # Root export
-├── components/              # UI components (PascalCase)
-├── pages/                   # Routes
-├── functions/               # Utilities (called via el.call())
-├── state/                   # Application state
-└── designSystem/            # Design tokens
-```
-
-## Strict Rules
-
-1. **No JavaScript imports between project files.** Reference by name; call functions via `el.call()`.
-2. **All folders must be completely flat.** No subfolders anywhere.
-3. **PascalCase keys auto-extend.** `{ UpChart: { flex: '1' } }` = `{ UpChart: { extends: 'UpChart', flex: '1' } }`.
-4. **Props always flatten directly.** No `props:` wrapper ever.
-5. **Events use `onX` prefix.** `onClick`, `onRender` — never `on: { }` wrapper.
-6. **Components are objects, never functions.**
-
-## Component Anatomy
-
-```js
-export const ComponentName = {
-  extends: 'Flex',
-  childExtends: 'ListItem',
-  padding: 'A B',
-  background: 'surface',
-  borderRadius: 'B',
-  onClick: (e, el, state) => {},
-  onRender: (el, state) => {},
-  isActive: false,
-  '.isActive': { background: 'primary' },
-  '@mobile': { padding: 'A' },
-  Header: {},
-  Content: { Article: { text: 'Hello' } },
-  Footer: {}
-}
-```
-
-## Spacing Scale
-
-| Token | px | Token | px | Token | px |
-|-------|----|-------|----|-------|----|
-| X | 3 | Z | 10 | A | 16 |
-| Y | 6 | Z1 | 12 | B | 26 |
-| | | Z2 | 14 | C | 42 |
-| | | A1 | 18-20 | D | 67 |
-| | | B1 | 32 | E | 109 |
-
-## Shorthand Props
-
-```js
-flow: 'y'                    // flexFlow: 'column'
-flow: 'x'                    // flexFlow: 'row'
-align: 'center center'       // alignItems + justifyContent
-round: 'B'                   // borderRadius
-size: 'C'                    // width + height
-```
-
-## Responsive & Conditional
-
-```js
-'@mobile': { fontSize: 'A' }
-'@tablet': { padding: 'B' }
-isCompleted: true,
-'.isCompleted': { textDecoration: 'line-through' }
-```
-
-## CSS Selectors & Pseudo Elements
-
-```js
-':hover': { background: 'deepFir' }
-':active': { background: 'deepFir 1 +5' }
-':focus-visible': { outline: 'solid X blue.3' }
-':hover > div': { opacity: '1' }
-```
-
-## State Management
-
-```js
-s.update({ key: value })       // Update + re-render
-s.root.update({...})           // Update root state
-s.toggle('isActive')           // Toggle boolean
-```
-
-## Dynamic Props
-
-```js
-text: (el, s) => `Count: ${s.count}`
-hide: (el, s) => !s.items.length
-background: (el, s) => el.call('getColor', s.status)
-```
-
-## Children Pattern
-
-```js
-List: {
-  children: (el, state) => state.items,
-  childrenAs: 'state',
-  childExtends: 'ListItem'
-}
-```
-
-## el.call() Context
-
-```js
-// functions/myFn.js
-export const myFn = function myFn(arg) {
-  const el = this    // 'this' IS the element
-}
-// In component:
-onClick: (e, el) => el.call('myFn', someArg)  // ✅
-onClick: (e, el) => el.call('myFn', el, someArg)  // ❌ el passed twice
-```
-
-## onRender Guard
-
-```js
-onRender: (el) => {
-  if (el.__initialized) return
-  el.__initialized = true
-  el.call('initLogic')
-}
-```
-
-## CRITICAL: Icon in Buttons
-
-```js
-// ❌ BROKEN
-MyBtn: { extends: 'Button', Icon: { name: 'heart' } }
-
-// ✅ CORRECT
-MyBtn: {
-  extends: 'Flex', tag: 'button', align: 'center center',
-  Svg: { viewBox: '0 0 24 24', width: '22', height: '22',
-    html: '<path d="..." fill="currentColor"/>' }
-}
-```
-
-## Suffix Naming (Multiple Same-Type Children)
-
-```js
-NavButton: { text: 'All' },
-NavButton_add: { icon: 'plus', text: 'Add' }
-```
-
-## DO's and DON'Ts
-
-**DO:** `extends`, `childExtends`, flat props, `onX` events, `el.call()`, design tokens, flat folders
-**DON'T:** `extend`/`childExtend` (v2), `props: {}` wrapper, `on: {}` wrapper, cross-file imports, function components, subfolders, hardcoded px values
+- Max content width `1100px`, section padding `'D B'` — applied per section, see `About.js:6`
+- Sections alternate `bgBase` / `bgSurface` backgrounds; `accent` for labels and highlights
+- Every section carries `tag: 'section'`, an `id: 'section-xxx'`, and an `aria-label`
+- `smbls/pages/index.js` registers **both** `'/'` and `'/portfolio'` — the second is required for
+  the GitHub Pages subdirectory deploy, since the router reads the first path segment. Don't
+  remove it. Full context in `deploy-github-pages.md` at the workspace root.
