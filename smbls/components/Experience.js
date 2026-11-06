@@ -61,7 +61,7 @@ export const Experience = {
           Period:   { extends: 'P', text: 'Feb 2025 — Present', fontSize: 'Z', color: 'textMuted' },
           Bullets: {
             extends: 'BulletList',
-            B1: { extends: 'BulletItem', content:'Built 50+ reusable UI components using DOMQL, enabling faster feature development and consistent design' },
+            B1: { extends: 'BulletItem', content:'Built 50+ reusable UI components using DOMQL for the product design system, some also used by other engineers' },
             B2: { extends: 'BulletItem', content:'Developed DOMQL-based project templates using Claude Code, Antigravity and Gemini, improving AI training data quality' },
             B3: { extends: 'BulletItem', content:'Added new features and resolved bugs for a Figma-like collaborative canvas' }
           },
@@ -90,7 +90,7 @@ export const Experience = {
             B1: { extends: 'BulletItem', content:'Sole developer on the PeopleZone landing page rebuild: replaced an older .NET Framework front end with a React single-page app and VB.NET API, so switching tabs no longer reloads the page' },
             B2: { extends: 'BulletItem', content:'Primary developer of a customer management system: designed the MySQL database, built the C# ASP.NET Web API and reusable jQuery components' },
             B3: { extends: 'BulletItem', content:'Developed dozens of REST API endpoints in VB.NET for Hostly, a B2B platform for renting spaces and booking services' },
-            B4: { extends: 'BulletItem', content:'Built an Angular front-end prototype for a ticketing system, with a custom workflow for each department' }
+            B4: { extends: 'BulletItem', content:'Built an Angular front-end prototype for a ticketing system with admin-configurable ticket types, statuses, and workflows, so tickets could move through any number of departments' }
           },
           Tags: {
             extends: 'TagList',
@@ -137,8 +137,8 @@ export const Experience = {
           Period:   { extends: 'P', text: 'Sept 2010 — Jan 2015', fontSize: 'Z', color: 'textMuted' },
           Bullets: {
             extends: 'BulletList',
-            B1: { extends: 'BulletItem', content:'Led front-end of mobile warehouse system with JavaScript and jQuery, and built its SOAP API back end with C#, VB.NET, and Oracle SQL' },
-            B2: { extends: 'BulletItem', content:'Managed a partnership with Panasonic Avionics to let passengers order duty-free goods through the in-flight entertainment system' },
+            B1: { extends: 'BulletItem', content:'Led a mobile warehouse system project: built its SOAP API back end with C#, VB.NET, and Oracle SQL, worked with the outside vendor that built the mobile device side, and reported progress to management' },
+            B2: { extends: 'BulletItem', content:'Built the API and handled communication with Panasonic Avionics for ordering duty-free goods through the in-flight entertainment system' },
             B3: { extends: 'BulletItem', content:'Translated 50+ business requirements into technical specs for the in-flight POS system' },
             B4: { extends: 'BulletItem', content:'Merged copy-pasted code of 3 warehouses into shared classes with inheritance, so a change to the main warehouse also reaches the 2 smaller ones' }
           },
