@@ -62,9 +62,8 @@ export const Experience = {
           Bullets: {
             extends: 'BulletList',
             B1: { extends: 'BulletItem', content:'Built 50+ reusable UI components using DOMQL, enabling faster feature development and consistent design' },
-            B2: { extends: 'BulletItem', content:'Developed DOMQL-based project templates using Antigravity and Gemini, improving AI training data quality' },
-            B3: { extends: 'BulletItem', content:'Added new features and resolved bugs for a Figma-like collaborative canvas' },
-            B4: { extends: 'BulletItem', content:'Collaborated with cross-functional teams to optimize canvas performance and editing experience' }
+            B2: { extends: 'BulletItem', content:'Developed DOMQL-based project templates using Claude Code, Antigravity and Gemini, improving AI training data quality' },
+            B3: { extends: 'BulletItem', content:'Added new features and resolved bugs for a Figma-like collaborative canvas' }
           },
           Tags: {
             extends: 'TagList',
@@ -72,7 +71,8 @@ export const Experience = {
             T2: { extends: 'TechTag', text: 'JavaScript' },
             T3: { extends: 'TechTag', text: 'Symbols' },
             T4: { extends: 'TechTag', text: 'Antigravity' },
-            T5: { extends: 'TechTag', text: 'Gemini' }
+            T5: { extends: 'TechTag', text: 'Gemini' },
+            T6: { extends: 'TechTag', text: 'Claude Code' }
           }
         }
       },
@@ -87,10 +87,10 @@ export const Experience = {
           Period:   { extends: 'P', text: 'Oct 2020 — May 2024', fontSize: 'Z', color: 'textMuted' },
           Bullets: {
             extends: 'BulletList',
-            B1: { extends: 'BulletItem', content:'Redesigned PeopleZone landing page in React/VB.NET — reduced load time by 50%, increased job seekers by 10%' },
-            B2: { extends: 'BulletItem', content:'Built ticketing system with Angular + VB.NET API, reducing issue resolution time by 15%' },
-            B3: { extends: 'BulletItem', content:'Constructed Customer Management System with reusable jQuery components — 40% increase in user adoption' },
-            B4: { extends: 'BulletItem', content:'Delivered B2B community platform Hostly for renting spaces and services' }
+            B1: { extends: 'BulletItem', content:'Sole developer on the PeopleZone landing page rebuild: replaced an older .NET Framework front end with a React single-page app and VB.NET API, so switching tabs no longer reloads the page' },
+            B2: { extends: 'BulletItem', content:'Primary developer of a customer management system: designed the MySQL database, built the C# ASP.NET Web API and reusable jQuery components' },
+            B3: { extends: 'BulletItem', content:'Developed dozens of REST API endpoints in VB.NET for Hostly, a B2B platform for renting spaces and booking services' },
+            B4: { extends: 'BulletItem', content:'Built an Angular front-end prototype for a ticketing system, with a custom workflow for each department' }
           },
           Tags: {
             extends: 'TagList',
@@ -108,14 +108,13 @@ export const Experience = {
         Dot: { extends: 'JobDot', DotCircle: { background: 'textMuted' } },
         Card: {
           extends: 'JobCardInner',
-          Role:     { extends: 'H3', text: 'Developer', fontSize: 'A', fontWeight: '600', color: 'textPrimary' },
+          Role:     { extends: 'H3', text: 'Student', fontSize: 'A', fontWeight: '600', color: 'textPrimary' },
           Company:  { extends: 'P', text: 'DevMountain Bootcamp · Dallas, TX', fontSize: 'Z1', color: 'accent', fontWeight: '500' },
           Period:   { extends: 'P', text: 'Nov 2019 — Feb 2020', fontSize: 'Z', color: 'textMuted' },
           Bullets: {
             extends: 'BulletList',
             B1: { extends: 'BulletItem', content:'Built Jiabon — full-stack homemade food app with Google Maps API and Stripe; awarded Best Business Solution' },
-            B2: { extends: 'BulletItem', content:'Collaborated on Meal Thyme — meal planning app with scheduling and grocery list generation' },
-            B3: { extends: 'BulletItem', content:'Created reusable components that increased team development efficiency by 10%' }
+            B2: { extends: 'BulletItem', content:'Collaborated on Meal Thyme — meal planning app with scheduling and grocery list generation' }
           },
           Tags: {
             extends: 'TagList',
@@ -138,10 +137,10 @@ export const Experience = {
           Period:   { extends: 'P', text: 'Sept 2010 — Jan 2015', fontSize: 'Z', color: 'textMuted' },
           Bullets: {
             extends: 'BulletList',
-            B1: { extends: 'BulletItem', content:'Led front-end of mobile warehouse system with SOAP API back-end — 30% reduction in management time' },
-            B2: { extends: 'BulletItem', content:'Partnered with Panasonic Avionics to build in-flight duty-free ordering system — reduced selling time by 25%' },
-            B3: { extends: 'BulletItem', content:'Translated 50+ complex business requirements into technical specs for real-time in-flight POS support' },
-            B4: { extends: 'BulletItem', content:'Optimized shared codebase — new developers onboard 20% faster' }
+            B1: { extends: 'BulletItem', content:'Led front-end of mobile warehouse system with JavaScript and jQuery, and built its SOAP API back end with C#, VB.NET, and Oracle SQL' },
+            B2: { extends: 'BulletItem', content:'Managed a partnership with Panasonic Avionics to let passengers order duty-free goods through the in-flight entertainment system' },
+            B3: { extends: 'BulletItem', content:'Translated 50+ business requirements into technical specs for the in-flight POS system' },
+            B4: { extends: 'BulletItem', content:'Merged copy-pasted code of 3 warehouses into shared classes with inheritance, so a change to the main warehouse also reaches the 2 smaller ones' }
           },
           Tags: {
             extends: 'TagList',

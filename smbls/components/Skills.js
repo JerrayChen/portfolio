@@ -50,7 +50,6 @@ export const Skills = {
           flexWrap: 'wrap',
           C1:  { extends: 'SkillChip', text: 'ReactJS' },
           C2:  { extends: 'SkillChip', text: 'JavaScript' },
-          C3:  { extends: 'SkillChip', text: 'TypeScript' },
           C4:  { extends: 'SkillChip', text: 'HTML' },
           C5:  { extends: 'SkillChip', text: 'CSS / Sass' },
           C6:  { extends: 'SkillChip', text: 'Angular' },
@@ -105,7 +104,8 @@ export const Skills = {
           C6: { extends: 'SkillChip', text: 'bcryptjs' },
           C7: { extends: 'SkillChip', text: 'Antigravity' },
           C8: { extends: 'SkillChip', text: 'Gemini' },
-          C9: { extends: 'SkillChip', text: 'Agile' }
+          C9: { extends: 'SkillChip', text: 'Agile' },
+          C10: { extends: 'SkillChip', text: 'Claude Code' }
         }
       }
     }
