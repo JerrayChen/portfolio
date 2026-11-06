@@ -1,0 +1,13 @@
+{
+  "name": "@symbo.ls/polyglot",
+  "version": "3.8.0",
+  "description": "Empty stand-in. smbls 3.8.0 imports this package, and this site does not use it.",
+  "private": true,
+  "type": "module",
+  "main": "./index.js",
+  "module": "./index.js",
+  "exports": {
+    ".": "./index.js",
+    "./functions": "./functions.js"
+  }
+}

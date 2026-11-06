@@ -8,9 +8,15 @@
   },
   "dependencies": {
     "@supabase/supabase-js": "^2.100.0",
-    "smbls": "^3.4.11"
+    "smbls": "3.8.0",
+    "@symbo.ls/sdk": "file:./stubs/symbols-sdk",
+    "@symbo.ls/polyglot": "file:./stubs/symbols-polyglot"
   },
   "devDependencies": {
     "buffer": "^6.0.3"
+  },
+  "overrides": {
+    "@symbo.ls/sdk": "$@symbo.ls/sdk",
+    "@symbo.ls/polyglot": "$@symbo.ls/polyglot"
   }
 }

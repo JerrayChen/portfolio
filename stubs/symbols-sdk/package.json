@@ -1,0 +1,13 @@
+{
+  "name": "@symbo.ls/sdk",
+  "version": "3.8.0",
+  "description": "Empty stand-in. @symbo.ls/cli 3.8.0 imports this package, and this site does not use it.",
+  "private": true,
+  "type": "module",
+  "main": "./index.js",
+  "module": "./index.js",
+  "exports": {
+    ".": "./index.js",
+    "./utils/services": "./utils/services.js"
+  }
+}
